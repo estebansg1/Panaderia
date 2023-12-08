@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Añadir Proveedor</title>
+    <style>
+        body {
+            background-color: rgb(0, 0, 0);
+            background-image: url('img/panaderiafondo.jpg');
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 7%;
+            padding: 10px;
+            background-color: #ffffff7a;
+            border-bottom: 1px solid lightgray;
+            box-shadow: 0 0 40px rgb(0, 0, 0);
+        }
+        .headerlink {
+            top: 0;
+            right: 0;
+            margin-top: 23px;
+            position:fixed;
+        }
+        .headerlink a{
+            text-decoration: none;
+            color: #2c1507;
+            font-size: 18px;
+            margin: 0 15px;
+        }
+        header img {
+            width: 150px;
+            cursor: pointer;
+        }
+        .container {
+            width: 40%;
+            height: 60%;
+            padding: 16px;
+            margin-top: 60px;
+            background-color: #eccf8dc5;
+            border-radius: 12px;
+            box-shadow: 0 0 40px rgb(0, 0, 0);
+        }
+        .container h1 {
+            text-align: center;
+            color: #2c1507;
+        }
+        button {
+            background-color: rgba(255, 255, 255, 0.404);
+            color: black;
+            padding: 8px 10px;
+            margin-top: 5%;
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+            border-color: gray;
+            text-align: center;
+            font-size: medium;
+        }
+        label {
+            font-size: large;
+        }
+        input {
+            border-radius: 8px;
+            width: 100%;
+            height: 25px;
+            border-color: lightgray;
+            border-width: 0.02cap;
+            background-color: #fff9e7;
+            margin-bottom: 20px;
+        }
+        a {
+            text-decoration: none;
+            color:#2c1507;
+            margin-bottom: 20px;
+            display: block;
+        }
+        h3{
+          margin: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a style="text-align: left;" href="/">
+            <img src="img/logo.webp" alt="Logo de Panaderia la Providencia">
+        </a>
+        <div class="headerlink">
+            <a href="categoria.html">Categorías </a>
+            <a href="producto.html">Productos </a>
+            <a href="proveedor.html">Proveedores </a>
+            <a href="clientes.html">Clientes </a>
+        </div>
+    </header> 
+    <div class="container">
+        <a href="proveedor.html">X Cancelar</a>
+        <h1>Añadir Proveedor</h1>
+        <form action="proveedor.php" method="post">
+            <label for="direccion">Dirección:</label><br>
+            <input type="text" id="direccion" name="direccion" required><br>
+            <label for="calle">Calle:</label><br>
+            <input type="text" id="calle" name="calle" required><br>
+            <label for="numero">Número:</label><br>
+            <input type="text" id="numero" name="numero" required><br>
+            <label for="comunidad">Comunidad:</label><br>
+            <input type="text" id="comunidad" name="comunidad" required><br>
+            <label for="ciudad">Ciudad:</label><br>
+            <input type="text" id="ciudad" name="ciudad" required><br>
+            <button type="submit">Añadir proveedor</button>
+        </form>
+    </div>
+</body>
+</html>
