@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>Añadir Proveedor</title>
+    <title>Añadir Producto</title>
     <style>
         body {
-            background-color: rgb(0, 0, 0);
-            background-image: url('img/panaderiafondo.jpg');
+            background-image: url('img/panaderiafondo1.jpg');
             background-size: cover;
             display: flex;
             justify-content: center;
@@ -23,7 +22,6 @@
             height: 7%;
             padding: 10px;
             background-color: #ffffff7a;
-            border-bottom: 1px solid lightgray;
             box-shadow: 0 0 40px rgb(0, 0, 0);
         }
         .headerlink {
@@ -43,10 +41,10 @@
             cursor: pointer;
         }
         .container {
-            width: 40%;
-            height: 60%;
+            max-width: 60%;
+            max-height: 90%;
             padding: 16px;
-            margin-top: 60px;
+            margin-top: 100px; 
             background-color: #eccf8dc5;
             border-radius: 12px;
             box-shadow: 0 0 40px rgb(0, 0, 0);
@@ -59,7 +57,7 @@
             background-color: rgba(255, 255, 255, 0.404);
             color: black;
             padding: 8px 10px;
-            margin-top: 5%;
+            margin-top: 2%;
             width: 100%;
             border-radius: 20px;
             box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
@@ -82,23 +80,39 @@
         a {
             text-decoration: none;
             color:#2c1507;
-            margin-bottom: 20px;
-            display: block;
         }
         h3{
           margin: 8px;
+        }
+        select{
+            border-radius: 8px;
+            width: 50%;
+            height: 25px;
+            border-color: lightgray;
+            border-width: 0.02cap;
+            background-color: #fff9e7;
+            margin-bottom: 20px;
+        }
+        .inputdir{
+            border-radius: 8px;
+            width: 47.8%;
+            height: 25px;
+            border-color: lightgray;
+            border-width: 0.02cap;
+            background-color: #fff9e7;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
     <header>
         <a style="text-align: left;" href="/">
-            <img src="img/logo.webp" alt="Logo de Panaderia la Providencia">
+            <img src="img/logo.webp">
         </a>
         <div class="headerlink">
             <a href="categoria.html">Categorías </a>
             <a href="producto.html">Productos </a>
-            <a href="proveedor.html">Proveedores </a>
+            <a href="proveedor.html">Proovedores </a>
             <a href="clientes.html">Clientes </a>
         </div>
     </header> 
@@ -106,18 +120,22 @@
         <a href="proveedor.html">X Cancelar</a>
         <h1>Añadir Proveedor</h1>
         <form action="proveedor.php" method="post">
-            <label for="direccion">Dirección:</label><br>
-            <input type="text" id="direccion" name="direccion" required><br>
-            <label for="calle">Calle:</label><br>
-            <input type="text" id="calle" name="calle" required><br>
-            <label for="numero">Número:</label><br>
-            <input type="text" id="numero" name="numero" required><br>
-            <label for="comunidad">Comunidad:</label><br>
-            <input type="text" id="comunidad" name="comunidad" required><br>
-            <label for="ciudad">Ciudad:</label><br>
-            <input type="text" id="ciudad" name="ciudad" required><br>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <label for="paginaweb">Página web:</label>
+                <input type="text" id="paginaweb" name="paginaweb">
+                <label for="telefono">Teléfono:</label>
+                <input type="text" id="telefono" name="telefono" required>
+                <label for="telefono2">Teléfono 2 (opcional):</label>
+                <input type="text" id="telefono2" name="telefono2">
+                <label for="direccion">Dirección:</label><br>
+                <input class="inputdir" type="text" placeholder="Calle" id="calle" name="calle" size="10">
+                <input class="inputdir" type="number" placeholder="Número" id="numero" name="numero" size="5">
+                <input class="inputdir" type="text" placeholder="Comunidad" id="comunidad" name="comunidad" size="10">
+                <input class="inputdir" type="text" placeholder="Ciudad" id="ciudad" name="ciudad" size="10">
             <button type="submit">Añadir proveedor</button>
-        </form>
+          </form>
+          
     </div>
 </body>
 </html>

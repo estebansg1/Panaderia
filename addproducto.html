@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>Añadir Producto</title>
     <style>
         body {
-            background-color: rgb(0, 0, 0);
-            background-image: url('img/panaderiafondo.jpg');
+            background-image: url('img/panaderiafondo1.jpg');
             background-size: cover;
             display: flex;
             justify-content: center;
@@ -23,7 +22,6 @@
             height: 7%;
             padding: 10px;
             background-color: #ffffff7a;
-            border-bottom: 1px solid lightgray;
             box-shadow: 0 0 40px rgb(0, 0, 0);
         }
         .headerlink {
@@ -43,10 +41,10 @@
             cursor: pointer;
         }
         .container {
-            width: 40%;
-            height: 80%;
+            max-width: 90%;
+            max-height: 90%;
             padding: 16px;
-            margin-top: 60px;
+            margin-top: 60px; 
             background-color: #eccf8dc5;
             border-radius: 12px;
             box-shadow: 0 0 40px rgb(0, 0, 0);
@@ -82,87 +80,54 @@
         a {
             text-decoration: none;
             color:#2c1507;
-            margin-bottom: 20px;
-            display: block;
         }
         h3{
           margin: 8px;
+        }
+        select{
+            border-radius: 8px;
+            width: 50%;
+            height: 25px;
+            border-color: lightgray;
+            border-width: 0.02cap;
+            background-color: #fff9e7;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
     <header>
         <a style="text-align: left;" href="/">
-            <img src="img/logo.webp" alt="Logo de Panaderia la Providencia">
+            <img src="img/logo.webp">
         </a>
         <div class="headerlink">
             <a href="categoria.html">Categorías </a>
             <a href="producto.html">Productos </a>
-            <a href="proveedor.html">Proveedores </a>
+            <a href="proveedor.html">Proovedores </a>
             <a href="clientes.html">Clientes </a>
         </div>
-    </header> 
+    </header>  
     <div class="container">
         <a href="producto.html">X Cancelar</a>
         <h1>Añadir Producto</h1>
-        <form action="producto.php" method="post">
-            <!-- Pan de Azúcar -->
-            <label for="panAzucarNombre">Nombre:</label><br>
-            <input type="text" id="panAzucarNombre" name="panAzucarNombre" value="Pan de Azúcar" readonly><br>
-            <label for="panAzucarPrecio">Precio:</label><br>
-            <input type="text" id="panAzucarPrecio" name="panAzucarPrecio" value="$10.00" readonly><br>
-            <label for="panAzucarStock">Stock:</label><br>
-            <input type="text" id="panAzucarStock" name="panAzucarStock" value="30" readonly><br>
-
-            <!-- Telera -->
-            <label for="teleraNombre">Nombre:</label><br>
-            <input type="text" id="teleraNombre" name="teleraNombre" value="Telera" readonly><br>
-            <label for="teleraPrecio">Precio:</label><br>
-            <input type="text" id="teleraPrecio" name="teleraPrecio" value="$6.00" readonly><br>
-            <label for="teleraStock">Stock:</label><br>
-            <input type="text" id="teleraStock" name="teleraStock" value="100" readonly><br>
-
-            <!-- Concha -->
-            <label for="conchaNombre">Nombre:</label><br>
-            <input type="text" id="conchaNombre" name="conchaNombre" value="Concha" readonly><br>
-            <label for="conchaPrecio">Precio:</label><br>
-            <input type="text" id="conchaPrecio" name="conchaPrecio" value="$9.50" readonly><br>
-            <label for="conchaStock">Stock:</label><br>
-            <input type="text" id="conchaStock" name="conchaStock" value="50" readonly><br>
-
-            <!-- Baguette -->
-            <label for="baguetteNombre">Nombre:</label><br>
-            <input type="text" id="baguetteNombre" name="baguetteNombre" value="Baguette" readonly><br>
-            <label for="baguettePrecio">Precio:</label><br>
-            <input type="text" id="baguettePrecio" name="baguettePrecio" value="$15.00" readonly><br>
-            <label for="baguetteStock">Stock:</label><br>
-            <input type="text" id="baguetteStock" name="baguetteStock" value="12" readonly><br>
-
-            <!-- Brioche -->
-            <label for="briocheNombre">Nombre:</label><br>
-            <input type="text" id="briocheNombre" name="briocheNombre" value="Brioche" readonly><br>
-            <label for="briochePrecio">Precio:</label><br>
-            <input type="text" id="briochePrecio" name="briochePrecio" value="$14.00" readonly><br>
-            <label for="briocheStock">Stock:</label><br>
-            <input type="text" id="briocheStock" name="briocheStock" value="10" readonly><br>
-
-            <!-- Pan Integral -->
-            <label for="integralNombre">Nombre:</label><br>
-            <input type="text" id="integralNombre" name="integralNombre" value="Pan Integral" readonly><br>
-            <label for="integralPrecio">Precio:</label><br>
-            <input type="text" id="integralPrecio" name="integralPrecio" value="$16.00" readonly><br>
-            <label for="integralStock">Stock:</label><br>
-            <input type="text" id="integralStock" name="integralStock" value="6" readonly><br>
-
-            <!-- Rosca de Pan -->
-            <label for="roscaNombre">Nombre:</label><br>
-            <input type="text" id="roscaNombre" name="roscaNombre" value="Rosca de Pan" readonly><br>
-            <label for="roscaPrecio">Precio:</label><br>
-            <input type="text" id="roscaPrecio" name="roscaPrecio" value="$18.50" readonly><br>
-            <label for="roscaStock">Stock:</label><br>
-            <input type="text" id="roscaStock" name="roscaStock" value="14" readonly><br>
-
-            <button type="submit">Añadir productos</button>
+        <form action="categoria.php" method="post">
+            <label for="clave">Clave:</label><br>
+            <input type="text" id="clave" name="clave"><br>
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" id="nombre" name="nombre"><br>
+            <label for="precio">Precio:</label><br>
+            <input type="number" id="precio" name="precio"><br>
+            <label for="stock">Stock:</label><br>
+            <input type="number" id="stock" name="stock"><br>
+            <label for="categoria">Categoria:</label>
+            <select>
+                <option id="categoria" name="categoria">Seleccionar...</option>
+            </select><br>
+            <label for="proveedor">Proveedor:</label>
+            <select>
+                <option id="proveedor" name="proveedor">Seleccionar...</option>
+            </select><br>
+            <button type="submit">Añadir Producto</button>
         </form>
     </div>
 </body>

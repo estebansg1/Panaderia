@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>Añadir Producto</title>
+    <title>Productos</title>
     <style>
         body {
-            background-color: rgb(0, 0, 0);
             background-image: url('img/panaderiafondo.jpg');
             background-size: cover;
             display: flex;
@@ -23,7 +22,6 @@
             height: 7%;
             padding: 10px;
             background-color: #ffffff7a;
-            border-bottom: 1px solid lightgray;
             box-shadow: 0 0 40px rgb(0, 0, 0);
         }
         .headerlink {
@@ -69,6 +67,7 @@
             margin-bottom: 10px;
             position: fixed;
             font-weight: bold;
+
         }
         a {
             text-decoration: none;
@@ -77,52 +76,27 @@
         h3{
           margin: 8px;
         }
-        form {
-            margin-top: 20px;
-        }
-        label {
-            font-size: large;
-        }
-        input {
-            border-radius: 8px;
-            width: 100%;
-            height: 25px;
-            border-color: lightgray;
-            border-width: 0.02cap;
-            background-color: #fff9e7;
-            margin-bottom: 20px;
-        }
     </style>
 </head>
 <body>
     <header>
         <a style="text-align: left;" href="/">
-            <img src="img/logo.webp" alt="Logo de Panaderia la Providencia">
+            <img src="img/logo.webp" >
         </a>
         <div class="headerlink">
+            <a href="categoria.html">Categorías </a>
             <a href="producto.html">Productos </a>
+            <a href="proveedor.html">Proovedores </a>
+            <a href="clientes.html">Clientes </a>
         </div>
     </header> 
     <div class="container">
-        <h1>Añadir Producto:</h1>
-        <form action="process_product.php" method="post">
-            <label for="productId">ID:</label>
-            <input type="text" id="productId" name="productId" required>
-
-            <label for="productName">Nombre:</label>
-            <input type="text" id="productName" name="productName" required>
-
-            <label for="productPrice">Precio:</label>
-            <input type="text" id="productPrice" name="productPrice" required>
-
-            <label for="productStock">Stock:</label>
-            <input type="text" id="productStock" name="productStock" required>
-
-            <button type="submit">Añadir Producto</button>
-        </form>
+        <h1>Productos:</h1>
     </div>
+    <button>
+        <a href="addproducto.html">Añadir Nuevo Producto</a>
+    </button>
 </body>
 </html>
-
 
 
