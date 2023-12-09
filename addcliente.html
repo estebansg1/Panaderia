@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Añadir Ciente</title>
+    <style>
+        body {
+            background-image: url('img/panaderiafondo1.jpg');
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 7%;
+            padding: 10px;
+            background-color: #ffffff7a;
+            box-shadow: 0 0 40px rgb(0, 0, 0);
+        }
+        .headerlink {
+            top: 0;
+            right: 0;
+            margin-top: 23px;
+            position:fixed;
+        }
+        .headerlink a{
+            text-decoration: none;
+            color: #2c1507;
+            font-size: 18px;
+            margin: 0 15px;
+        }
+        header img {
+            width: 150px;
+            cursor: pointer;
+        }
+        .container {
+            max-width: 90%;
+            max-height: 90%;
+            padding: 16px;
+            margin-top: 60px; 
+            background-color: #eccf8dc5;
+            border-radius: 12px;
+            box-shadow: 0 0 40px rgb(0, 0, 0);
+        }
+        .container h1 {
+            text-align: center;
+            color: #2c1507;
+        }
+        button {
+            background-color: rgba(255, 255, 255, 0.404);
+            color: black;
+            padding: 8px 10px;
+            margin-top: 5%;
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+            border-color: gray;
+            text-align: center;
+            font-size: medium;
+        }
+        label {
+            font-size: large;
+        }
+        input {
+            border-radius: 8px;
+            width: 100%;
+            height: 25px;
+            border-color: lightgray;
+            border-width: 0.02cap;
+            background-color: #fff9e7;
+            margin-bottom: 20px;
+        }
+        a {
+            text-decoration: none;
+            color:#2c1507;
+        }
+        h3{
+          margin: 8px;
+        }
+        select{
+            border-radius: 8px;
+            width: 50%;
+            height: 25px;
+            border-color: lightgray;
+            border-width: 0.02cap;
+            background-color: #fff9e7;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a style="text-align: left;" href="/">
+            <img src="img/logo.webp">
+        </a>
+        <div class="headerlink">
+            <a href="categoria.html">Categorías </a>
+            <a href="producto.html">Productos </a>
+            <a href="proveedor.html">Proovedores </a>
+            <a href="clientes.html">Clientes </a>
+            <a href="ventas.html">Ventas </a>
+        </div>
+    </header>  
+    <div class="container">
+        <a href="cliente.html">X Cancelar</a>
+        <h1>Añadir cliente</h1>
+        <form action="cliente.php" method="post">
+            <label for="rut_cliente">Clave:</label><br>
+            <input type="text" id="rut_cliente" name="rut_cliente"><br>
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" id="nombre" name="nombre"><br>
+            <label for="apellido_paterno_c">Apellido Paterno:</label><br>
+            <input type="text" id="apellido_paterno_c" name="apellido_paterno_c"><br>
+            <label for="apellido_materno_c">Apellido Materno:</label><br>
+            <input type="text" id="apellido_materno_c" name="apellido_materno_c"><br>
+            <label for="telefono1_c">Telefono 1:</label><br>
+            <input type="text" id="telefono1_c name="telefono1_c"><br>
+            <label for="telefono2_c">Telefono 2:</label><br>
+            <input type="text" id="telefono2_c name="telefono2_c"><br>
+            <label for="calle_c">Calle:</label><br>
+            <input type="text" id="calle_c name="calle_c"><br>
+            <label for="colonia_c">Colonia:</label><br>
+            <input type="text" id="colonia_c name="colonia_c"><br>
+            <label for="ciudad_c">Ciudad:</label><br>
+            <input type="text" id="ciudad_c name="ciudad_c"><br>
+            <button type="submit">Añadir cliente</button>
+        </form>
+    </div>
+</body>
+</html>
