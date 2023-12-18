@@ -1,30 +1,26 @@
 <?php
-// Establecer la conexión a la base de datos
-$servername = "localhost"; // Si tu servidor MySQL está en la misma máquina, puedes usar "localhost"
+$servername = "localhost";
 $username = "root";
 $password = "";
 $database = "negocio";
 
 $conn = new mysqli($servername, $username, $password, $database);
 
-// Verificar la conexión
 if ($conn->connect_error) {
     die("La conexión a la base de datos falló: " . $conn->connect_error);
 }
 
-// Procesar el formulario cuando se envía
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Obtener los datos del formulario
     $id_venta = $_POST["id_venta"];
-    $fecha_venta = $_POST["fecha_venta"];
     $monto_final_venta = $_POST["monto_final_venta"];
     $descuento_venta = $_POST["descuento_venta"];
-    $rot_cliente = $_POST["rot_cliente"];
+    $rut_cliente = $_POST["rut_cliente"];
 
-    // Preparar la consulta SQL para insertar datos en la tabla cliente
-    $sql = "INSERT INTO venta (id_venta, fecha_venta, monto_final_venta, descuento_venta, rot_cliente,) VALUES ('$id_venta', '$fecha_venta', '$monto_final_venta', '$descuento_venta', '$rot_cliente')";
+    // Fecha de venta establecida automáticamente
+    $fecha_venta = date('Y-m-d');
 
-    // Ejecutar la consulta y verificar si fue exitosa
+    $sql = "INSERT INTO venta (id_venta, fecha_venta, monto_final_venta, descuento_venta, rut_cliente) VALUES ('$id_venta', '$fecha_venta', '$monto_final_venta', '$descuento_venta', '$rut_cliente')";
+
     if ($conn->query($sql) === TRUE) {
         echo "Registro exitoso.";
     } else {
@@ -32,7 +28,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-// Cerrar la conexión a la base de datos
+$cliente_query = "SELECT rut_cliente, nombre_c, apellido_paterno_c FROM cliente";
+$cliente_result = $conn->query($cliente_query);
+
+$clientes = array();
+while ($cliente = $cliente_result->fetch_assoc()) {
+    $clientes[] = $cliente;
+}
+
 $conn->close();
 ?>
 
@@ -80,9 +83,9 @@ $conn->close();
         }
         .container {
             width: 50%;
-            height: 100%;
+            height: 60%;
             padding: 16px;
-            margin-top: 15%; 
+            margin-top: 5%; 
             background-color: #eccf8d;
         }
         .container h1 {
@@ -139,7 +142,7 @@ $conn->close();
             <a href="producto.html">Productos </a>
             <a href="proveedor.html">Proovedores </a>
             <a href="cliente.php">Clientes </a>
-            <a href="ventas.html">Ventas </a>
+            <a href="venta.php">Ventas </a>
         </div>
     </header> 
     <div class="container">
@@ -149,17 +152,24 @@ $conn->close();
             <label for="id_venta">Rut Cliente:</label>
             <input type="text" id="id_venta" name="id_venta" required><br>
 
-            <label for="fecha_venta">Nombre:</label>
-            <input type="text" id="fecha_venta" name="fecha_venta" required><br>
+            <label for="fecha_venta">Fecha venta:</label>
+            <input type="text" id="fecha_venta" name="fecha_venta" value="<?php echo date('Y-m-d'); ?>" required readonly><br>
 
-            <label for="monto_final_venta">Apellido Paterno:</label>
+            <label for="monto_final_venta">Monto Final:</label>
             <input type="text" id="monto_final_venta" name="monto_final_venta" required><br>
 
-            <label for="descuento_venta">Apellido Materno:</label>
+            <label for="descuento_venta">descuento:</label>
             <input type="text" id="descuento_venta" name="descuento_venta" required><br>
 
-            <label for="rot_cliente">Teléfono 1:</label>
-            <input type="text" id="rot_cliente" name="rot_cliente" required><br>
+            <label for="rut_cliente">Cliente:</label>
+            <select id="rut_cliente" name="rut_cliente">
+                <?php foreach ($clientes as $cliente) : ?>
+                    <option value='<?php echo $cliente['rut_cliente']; ?>'>
+                        <?php echo "{$cliente['nombre_c']} {$cliente['apellido_paterno_c']} - {$cliente['rut_cliente']}"; ?>
+                    </option>
+                <?php endforeach; ?>
+            </select><br>
+
             <button type="submit">Guardar</button>
         </form>
     </div>

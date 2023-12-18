@@ -139,7 +139,7 @@ $result = $conn->query($sql);
             <a href="producto.php">Productos </a>
             <a href="proveedor.php">Proovedores </a>
             <a href="cliente.php">Clientes </a>
-            <a href="ventas.html">Ventas </a>
+            <a href="venta.php">Ventas </a>
         </div>
     </header> 
     <div class="container">

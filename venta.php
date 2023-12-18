@@ -117,27 +117,12 @@ $con=mysqli_connect($server,$user,"",$db) or die ("Error");
                  </a>
                  <div class="headerlink">
                      <a href="categoria.html">Categorías </a>
-                     <a href="producto.html">Productos </a>
-                     <a href="proveedor.html">Proovedores </a>
-                     <a href="clientes.html">Clientes </a>
-                     <a href="ventas.html">Ventas </a>
+                     <a href="producto.php">Productos </a>
+                     <a href="proveedor.php">Proovedores </a>
+                     <a href="clientes.php">Clientes </a>
+                     <a href="venta.php">Ventas </a>
                  </div>
              </header>  
-             <div class="container">
-                 <a href="venta.html">X Cancelar</a>
-                 <h1>Añadir venta</h1>
-                 <form action="venta.php" method="post">
-                     <label for="rut_venta">Clave:</label><br>
-                     <input type="text" id="rut_venta" name="rut_venta"><br>
-                     <label for="nombre">Nombre:</label><br>
-                     <input type="text" id="nombre" name="nombre"><br>
-                     <label for="apellido_parerno_p">Apellido Paterno:</label><br>
-                     <input type="text" id="apellido_parerno_p" name="apellido_parerno_p"><br>
-                     <label for="descuento_venta">Apellido Materno:</label><br>
-                     <input type="text" id="descuento_venta" name="descuento_venta"><br>
-                     <label for="rot_cliente">Telefono 1:</label><br>
-                 </form>
-             </div>
          </body>
          
          </html>
@@ -148,7 +133,7 @@ $con=mysqli_connect($server,$user,"",$db) or die ("Error");
             <th>NOMBRE</th>
             <th>apellido_parerno_p</th>
             <th>descuento_venta</th>
-            <th>rot_cliente</th>
+            <th>rut_cliente</th>
           </tr>
          
       ?>
@@ -162,10 +147,10 @@ $con=mysqli_connect($server,$user,"",$db) or die ("Error");
          $fecha_venta=$_POST["fecha_venta"];
          $monto_final_venta=$_POST["apellido_parerno_p"];
          $descuento_venta=$_POST["descuento_venta"];
-         $rot_cliente=$_POST["rot_cliente"];
+         $rut_cliente=$_POST["rut_cliente"];
          
-         $insertar = "INSERT INTO venta(id_venta_fecha_venta,monto_final_venta,descuento_venta,rot_cliente,) 
-         VALUES ('$id_venta','$fecha_venta','$monto_final_venta','$descuento_venta','$rot_cliente')";
+         $insertar = "INSERT INTO venta(id_venta_fecha_venta,monto_final_venta,descuento_venta,rut_cliente,) 
+         VALUES ('$id_venta','$fecha_venta','$monto_final_venta','$descuento_venta','$rut_cliente')";
         
         $ejecutar= mysqli_query($con, $insertar);
 
@@ -190,7 +175,7 @@ $con=mysqli_connect($server,$user,"",$db) or die ("Error");
               $fecha_venta=$fila['fecha_venta'];
               $apellido_parerno_p= $fila['apellido_parerno_p'];
               $descuento_venta= $fila['descuento_venta'];
-              $rot_cliente= $fila['rot_cliente'];
+              $rut_cliente= $fila['rut_cliente'];
 
           $i++;
          
@@ -201,7 +186,7 @@ $con=mysqli_connect($server,$user,"",$db) or die ("Error");
            <td> <?php echo $fecha_venta; ?></td>
            <td> <?php echo $apellido_parerno_p; ?></td>
            <td> <?php echo $descuento_venta; ?></td>
-           <td> <?php echo $rot_cliente; ?></td>
+           <td> <?php echo $rut_cliente; ?></td>
            <td><a href='venta.php?editar= <?php echo $id; ?>'>EDITAR</a></td>
              <td><a href='venta.php?borrar= <?php echo $id; ?>'>ELIMINAR</a></td>
       </tr>

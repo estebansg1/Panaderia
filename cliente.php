@@ -134,10 +134,10 @@ $result = $conn->query($sql);
         </a>
         <div class="headerlink">
             <a href="categoria.html">Categorías </a>
-            <a href="producto.html">Productos </a>
-            <a href="proveedor.html">Proovedores </a>
+            <a href="producto.php">Productos </a>
+            <a href="proveedor.php">Proveedores </a>
             <a href="cliente.php">Clientes </a>
-            <a href="ventas.html">Ventas </a>
+            <a href="venta.php">Ventas </a>
         </div>
     </header> 
     <div class="container">

@@ -103,30 +103,11 @@
         </a>
         <div class="headerlink">
             <a href="categoria.html">Categorías </a>
-            <a href="producto.html">Productos </a>
-            <a href="proveedor.html">Proovedores </a>
+            <a href="producto.php">Productos </a>
+            <a href="proveedor.php">Proovedores </a>
             <a href="cliente.php">Clientes </a>
-            <a href="ventas.html">Ventas </a>
+            <a href="venta.php">Ventas </a>
         </div>
     </header>    
-    <div class="container">
-        <h1>Registro de ventas</h1>
-        <form action="" method="post">
-            <label for="id_venta">No.Venta:</label><br>
-            <input type="text" id="id_venta name="id_venta><br>
-            <label for="fecha_venta">Fecha de Venta:</label><br>
-            <input type="date" id="fecha_venta" name="fecha_venta"><br>
-            <label for="monto_inicial_venta">Monto inicial:</label><br>
-            <input type="text" id="monto_inicial_venta name="monto_inicial_venta><br>
-            <label for="descuento_venta">Descuento:</label><br>
-            <input type="text" id="descuento_venta name="descuento_venta><br>
-            <label for="rut_cliente">ID Cliente:</label><br>
-            <input type="text" id="rut_cliente name="rut_cliente"><br>
-            <button type="submit">Registrar Venta</button>
-        </form>
-    </div> 
-    <script>
-
-    </script>
 </body>
 </html>

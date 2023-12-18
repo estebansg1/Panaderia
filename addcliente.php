@@ -1,6 +1,6 @@
 <?php
 // Establecer la conexión a la base de datos
-$servername = "localhost"; // Si tu servidor MySQL está en la misma máquina, puedes usar "localhost"
+$servername = "localhost";
 $username = "root";
 $password = "";
 $database = "negocio";
@@ -141,10 +141,10 @@ $conn->close();
         </a>
         <div class="headerlink">
             <a href="categoria.html">Categorías </a>
-            <a href="producto.html">Productos </a>
-            <a href="proveedor.html">Proovedores </a>
+            <a href="producto.php">Productos </a>
+            <a href="proveedor.php">Proovedores </a>
             <a href="cliente.php">Clientes </a>
-            <a href="ventas.html">Ventas </a>
+            <a href="venta.php">Ventas </a>
         </div>
     </header> 
     <div class="container">

@@ -10,35 +10,43 @@ if ($conn->connect_error) {
     die("La conexión a la base de datos falló: " . $conn->connect_error);
 }
 
-// Lógica para la edición
+$cliente = array(); 
+
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["action"]) && $_POST["action"] == "editar") {
     if (isset($_POST["rut_cliente"])) {
         $rut_cliente = $_POST["rut_cliente"];
 
-        $nombre_c = $_POST["nombre_c"];
-        $apellido_paterno_c = $_POST["apellido_paterno_c"];
-        $apellido_materno_c = $_POST["apellido_materno_c"];
-        $telefono1_c = $_POST["telefono1_c"];
-        $telefono2_c = $_POST["telefono2_c"];
-        $numero_calle_c = $_POST["numero_calle_c"];
-        $calle_c= $_POST["calle_c"];
-        $ciudad_c = $_POST["ciudad_c"];
-        $colonia_c = $_POST["colonia_c"];
+        $check_sql = "SELECT * FROM cliente WHERE rut_cliente='$rut_cliente'";
+        $check_result = $conn->query($check_sql);
 
-        // Actualizar la información del cliente en la base de datos
-        $sql = "UPDATE cliente SET nombre_c='$nombre_c', apellido_paterno_c='$apellido_paterno_c', apellido_materno_c='$apellido_materno_c', telefono1_c='$telefono1_c', telefono2_c='$telefono2_c', numero_calle_c='$numero_calle_c', calle_c='$calle_c', ciudad_c='$ciudad_c', colonia_c='$colonia_c' WHERE rut_cliente='$rut_cliente'";
+        if ($check_result->num_rows == 1) {
+            $cliente = $check_result->fetch_assoc();
 
-        if ($conn->query($sql) === TRUE) {
-            echo "Cliente actualizado con éxito.";
+            $nombre_c = $_POST["nombre_c"];
+            $apellido_paterno_c = $_POST["apellido_paterno_c"];
+            $apellido_materno_c = $_POST["apellido_materno_c"];
+            $telefono1_c = $_POST["telefono1_c"];
+            $telefono2_c = $_POST["telefono2_c"];
+            $numero_calle_c = $_POST["numero_calle_c"];
+            $calle_c= $_POST["calle_c"];
+            $ciudad_c = $_POST["ciudad_c"];
+            $colonia_c = $_POST["colonia_c"];
+
+            $sql = "UPDATE cliente SET nombre_c='$nombre_c', apellido_paterno_c='$apellido_paterno_c', apellido_materno_c='$apellido_materno_c', telefono1_c='$telefono1_c', telefono2_c='$telefono2_c', numero_calle_c='$numero_calle_c', calle_c='$calle_c', ciudad_c='$ciudad_c', colonia_c='$colonia_c' WHERE rut_cliente='$rut_cliente'";
+
+            if ($conn->query($sql) === TRUE) {
+                echo "Cliente actualizado con éxito.";
+            } else {
+                echo "Error al actualizar el cliente: " . $conn->error;
+            }
         } else {
-            echo "Error al actualizar el cliente: " . $conn->error;
+            echo "Cliente no encontrado.";
         }
     } else {
         echo "Falta el identificador del cliente.";
     }
 }
 
-// Obtener los datos del cliente para mostrar en el formulario
 if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["rut_cliente"])) {
     $rut_cliente = $_GET["rut_cliente"];
     $sql = "SELECT * FROM cliente WHERE rut_cliente='$rut_cliente'";
